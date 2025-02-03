@@ -1,0 +1,23 @@
+layer=top
+anchor=top-right
+font=HormonyOS Sans SC 15
+width=350
+margin=0,30,30
+padding=10
+border-size=2
+progress-color=over #262626ff
+border-radius=5
+default-timeout=10000
+group-by=summary
+max-history=100
+sort=-time
+actions=1
+history=1
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=over #313244
+
+[grouped]
+format=<b>%s</b>\n%b

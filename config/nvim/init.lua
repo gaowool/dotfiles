@@ -1,0 +1,8 @@
+require('options')
+require('keymaps')
+require('plugins')
+require('colorscheme')
+require("lsp")
+require("nvimtree")
+require("fitten")
+require("rust-lang")
