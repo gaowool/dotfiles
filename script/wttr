@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# 设置城市（默认自动检测）
+CITY="Beijing"
+
+# 调用 wttr.in 服务
+curl -s "wttr.in/$CITY?format=%l:+%c+%t+%h+%w+%p"

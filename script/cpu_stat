@@ -1,0 +1,6 @@
+cat /proc/stat | grep '^cpu[0-9]' | awk '{
+    total = $2 + $3 + $4 + $5 + $6 + $7 + $8;
+    used = $2 + $3 + $4 + $7 + $8;
+    usage = used * 100 / total;
+    if (usage > max) max = usage;
+} END {printf "%.1f%%\n", max}'

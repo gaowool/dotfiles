@@ -1,0 +1,26 @@
+pkg=$(pacman -Q|wc -l)
+date=$(date +"%m-%d %X")
+bat=$(cat /sys/class/power_supply/BAT1/capacity)
+mem=$(free | awk '/Mem/{printf "%.1f%%\n", $3/$2 * 100}')
+temp=$(cat /sys/class/thermal/thermal_zone*/temp | awk 'BEGIN {max=0} {if ($1 > max) max=$1} END {printf "%.1f°C\n", max/1000}')
+
+if [ $bat -le 20 ] ;then
+    bat_icon=' '
+fi
+
+if [ $bat -le 80 ] ;then
+    bat_icon=' '
+fi
+
+if [ $bat -lt 100 ] ;then
+    bat_icon=' '
+fi
+
+if [ $bat -eq 100 ] ;then
+    bat_icon=' '
+fi
+
+echo "[󰣇 $pkg] [ $mem] [ $temp] [$date] [$bat_icon$bat%]"
+
+
+
